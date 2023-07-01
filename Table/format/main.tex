@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\title{awesome-mllm-eval}
+\author{xu lin}
+\date{July 2023}
+
+\begin{document}
+
+\begin{table}[]
+    \centering
+    \begin{center}
+        \begin{adjustbox}{max width=0.85\textwidth}
+            \begin{tabular}{c|cc|cc|cc|cc|cc}
+                \toprule
+                \multirow{2}{*}{Model}&\multicolumn{2}{c|}{Existence}&\multicolumn{2}{c|}{Count}&\multicolumn{2}{c|}{Position}&\multicolumn{2}{c|}{Color}&\multicolumn{2}{c}{OCR}\\
+                &ACC&ACC+&ACC&ACC+&ACC&ACC+&ACC&ACC+&ACC&ACC+\\
+                \midrule
+                % BLIP-2		&86.67&73.33&75.00&60.00&56.67&16.67&81.67&66.67&70.00&40.00\\
+                BLIP-2		&86.67&73.33&75.00&60.00&56.67&16.67&81.67&66.67&70.00&40.00\\
+                MiniGPT-4	&65.00&50.00 &66.67&56.67&48.33 &33.33&66.67&43.33&60.00&35.00\\
+                mPLUG-Owl	&73.33&46.67&50.00&0.00&50.00&0.00&51.67&3.33&55.00&10.00\\
+                ImageBind-LLM &75.00&53.33 &50.00 &10.00 &43.33 &3.33 &56.67 &16.67 &60.00 &20.00 \\
+                LLaMA-AdapterV2 &73.33 &46.67 &50.00 &0.00 &48.33 &0.00 &58.33 &16.67 &75.00 &50.00 \\
+                InstructBLIP &95.00&90.00&80.00&63.33&53.33&13.33&83.33&70.00&57.50&15.00\\
+                VisualGLM-6B &61.67&23.33&50.00&0.00&48.33&0.00&51.67&3.33&42.50&0.00\\
+                Otter&48.33  &0.00 &50.00&0.00&50.00&0.00&51.67&3.33&50.00&0.00\\
+                Multimodal-GPT 
+                &48.33&13.33 &48.33&6.67 &45.00&13.33 &55.00&13.33 &57.50&25.00 \\
+                PandaGPT &56.67&13.33&50.00&0.00&50.00&0.00&50.00&0.00&50.00&0.00\\
+                LLaVA	 &50.00&0.00&50.00&0.00&50.00&0.00&51.67&3.33&50.00&0.00\\
+                LaVIN    &95.00 &90.00 &61.67 &26.67 &53.33 &10.00 &58.33 &16.67 &67.50 &40.00 \\
+                
+                \bottomrule
+            \end{tabular}%
+        \end{adjustbox}
+    \end{center}
+    \caption{Evaluation of coarse-grained recognition and OCR.}
+    \label{table-1}
+\end{table}
+
+\begin{table}[]
+    \centering
+    \begin{center}
+        \begin{adjustbox}{max width=0.85\textwidth}
+            \begin{tabular}{c|cc|cc|cc|cc|cc}
+                %
+                \toprule
+                \multirow{2}{*}{Model}&\multicolumn{2}{c|}{Poster}&\multicolumn{2}{c|}{Celebrity}&\multicolumn{2}{c|}{Scene}&\multicolumn{2}{c|}{Landmark}&\multicolumn{2}{c}{Artwork}\\
+                &ACC&ACC+&ACC&ACC+&ACC&ACC+&ACC&ACC+&ACC&ACC+\\
+                \midrule
+                
+                BLIP-2&79.25&62.59&68.53&37.06&81.25&64.00&79.00&59.00&76.50&60.00\\
+                
+                MiniGPT-4&37.42 &18.37 &42.94 &22.35 &57.25 &38.50 &46.00 &23.00 &37.75 &18.00 \\
+                
+                mPLUG-Owl&78.23 &57.82 &66.18&34.12&78.00&57.50&86.25&73.00&63.25&33.00\\
+
+                ImageBind-LLM &52.72 &12.24 &55.29 &21.18 &68.75 &44.50 &53.00 &9.00 &54.25 &16.50 \\
+                
+                LLaMA-AdapterV2&65.65 &34.01 &59.71 &26.47 &82.50 &66.00 &82.75 &67.50 &55.75 &14.00 \\
+                InstructBLIP&74.15&49.66&67.06&34.12&84.00&69.00&59.75&20.00&76.75&57.50\\
+                
+                VisualGLM-6B&53.74 &12.24&50.88&2.35&81.75&64.50&59.75&24.00&55.25 &20.00\\
+                
+                Otter&44.90&0.00 &50.00&0.00 &44.25&0.00  &49.50 &0.00 
+                &41.75 &0.00 \\
+                
+                Multimodal-GPT&42.86 &14.97 &49.12&24.71 &50.50&17.50&48.25 &21.50 &46.50 &13.00 \\
+                PandaGPT&56.80&19.73&46.47&10.59&72.50&45.50&56.25&13.50&50.25&1.00\\
+                LLaVA&50.00&0.00&48.82&0.00&50.00&0.00&50.00&0.00&49.00&0.00\\
+
+                LaVIN&59.18 &20.41 &37.94 &9.41 &78.75 &58.00 &64.00 &29.50 &59.25 &28.00 \\
+
+                \bottomrule
+            \end{tabular}%
+        \end{adjustbox}
+    \end{center}
+    \caption{Evaluation of fine-grained recognition.}
+    \label{table-2}
+\end{table}
+
+
+\begin{table}[t]
+    \centering
+    \begin{center}
+        \begin{adjustbox}{max width=0.85\textwidth}
+            \begin{tabular}{c|cc|cc|cc|cc}
+                %
+                \toprule
+                \multirow{2}{*}{Model}&\multicolumn{2}{c|}{Commonsense Reasoning}&\multicolumn{2}{c|}{Numerical Calculation}&\multicolumn{2}{c|}{Text Translation}&\multicolumn{2}{c}{Code Reasoning}\\
+                &ACC&ACC+&ACC&ACC+&ACC&ACC+&ACC&ACC+\\
+                \midrule
+                
+                BLIP-2                 & 68.57&41.43 & 40.00&0.00  & 55.00&10.00 & 55.00&20.00 \\
+                MiniGPT-4              & 45.00 &27.14  & 40.00 &15.00  & 40.00 &15.00 & 65.00 &45.00 \\
+                mPLUG-Owl              & 57.14 &21.43  & 50.00&10.00  & 60.00&20.00 & 47.50&10.00 \\
+                ImageBind-LLM          & 40.00 &8.57  & 50.00 &5.00   & 50.00 &0.00  & 50.00 &10.00  \\
+                LLaMA-Adapter V2       & 58.57 &22.86  & 52.50&10.00   & 50.00 &0.00   & 50.00 &5.00  \\
+                InstructBLIP           & 75.00&54.29 & 35.00&5.00  & 55.00&10.00 & 47.50&0.00  \\
+                VisualGLM-6B           & 35.00 &4.29  & 45.00&0.00  & 50.00 &0.00  & 47.50 &0.00  \\
+                Otter                  & 38.57 &0.00  & 20.00 &0.00  & 27.50 &0.00  & 50.00&0.00  \\
+                Multimodal-GPT         & 43.57 &5.71  & 42.50 &20.00 & 50.00&10.00   & 45.00&10.00 \\
+                PandaGPT               & 56.43&17.14 & 50.00&0.00  & 52.50&5.00  & 47.50&0.00  \\
+                LLaVA                  & 47.14 &10.00  & 50.00&0.00  & 52.50&5.00  & 50.00&0.00  \\
+                LaVIN                  & 58.57 &28.57  & 55.00 &10.00   & 47.50 &0.00   & 50.00 &0.00   \\
+                
+                \bottomrule
+            \end{tabular}%
+        \end{adjustbox}
+    \end{center}
+    \caption{Evaluation of cognition.}
+    \label{table-3}
+\end{table}
+
+
+
+% \maketitle
+
+% \section{Introduction}
+
+\end{document}
